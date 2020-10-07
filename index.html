@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyForm FreeCodeCamp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <h1 id="title">Take my music survey</h1>
+        <p id="description">
+            This survey is intended to be submitted to FreeCodeCamp as part of a project.</p>
+    </header>
+    <form action="" id="survey-form">
+        <!--TODO: comienza el form-write-->
+        <div class="live form-name">
+            <div class="l1">
+                <input type="text" name="name" autocomplete="off" required id="name">
+                <label for="name" id="name-label">
+                <span class="content">Name</span>
+                </label>
+            </div>
+        </div>
+        <div class="live form-email">
+            <div class="l2">
+                <input type="email" name="email" autocomplete="off" required id="email">
+                <label for="email" id="email-label">
+                <span class="content">Email</span>
+                </label>
+            </div>
+        </div>
+        <div class="live form-number">
+            <div class="l3">
+                <input type="number" name="number" autocomplete="off" required id="number" min="10" max="99">
+                <label for="number" id="number-label">
+                <span class="content">Age</span>
+                </label>
+            </div>
+        </div>
+        <!-- TODO: Comienza la opcion de elegir el sexo -->
+        <div class="live form-sexo">
+            <input type="radio" name="sexo" id="men">
+            <label for="men">Men</label>
+            <p>or</p>
+            <input type="radio" name="sexo" id="women">
+            <label for="women">Women</label>
+        </div>
+        <!-- TODO: el Primer role -->
+        <div class="live form-role1">
+            <p>What kind of music do you listen to?</p>
+            <select id="dropdown" name="role" class="control" required>
+                <option disabled selected value>Select your favorite Music</option>
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="romantic">Romantic</option>
+                <option value="electronic">Electronic</option>
+                <option value="hip-hop">Hip-Hop</option>
+                <option value="rap">Rap</option>
+                <option value="Reggae">Reggae</option>
+                <option value="trap">Trap</option>
+                <option value="disco">Disco</option>
+                <option value="dance">Dance</option>
+                <option value="latin">Latin</option>
+                <option value="k-pop">K-Pop</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <!-- TODO: Primeras opciones con el Radio -->
+        <div class="live form-radio">
+            <p>How often do you listen to music</p>
+            <input type="radio" name="frequency" id="radio1" value="always" checked>
+            <label for="radio1">Always</label>
+            <input type="radio" name="frequency" id="radio2" value="sometimes">
+            <label for="radio2">Sometimes</label>
+            <input type="radio" name="frequency" id="radio3" value="rarely">
+            <label for="radio3">Rarely</label>
+        </div>
+        <!-- TODO: el segundo Role -->
+        <div class="live form-role2">
+            <p>You play any musical instrument</p>
+            <select id="most-like" name="mostLike" class="control" required>
+                <option disabled selected value>Select an option</option>
+                <option value="frequently">Yes, frequently</option>
+                <option value="moment">Yes, in some moment</option>
+                <option value="Rarely">Yes, but rarely</option>
+                <option value="not">Not, but would like to</option>
+                <option value="devil">It's up to the devil</option>
+            </select>
+        </div>
+        <!-- TODO: Las opciones de Checkbox -->
+        <div class="live form-checkbox">
+            <p>
+                Did you play any of these instruments or would you like to play them? (select at least one option)
+            </p>
+            <input type="checkbox" name="instruments" id="piano" value="piano">
+            <label for="piano">Piano</label>
+            <input type="checkbox" name="instruments" id="guitar" value="guitar">
+            <label for="guitar">Guitar</label>
+            <input type="checkbox" name="instruments" id="saxophone" value="saxophone">
+            <label for="saxophone">Saxophone</label>
+            <input type="checkbox" name="instruments" id="bass-guitar" value="bass-guitar">
+            <label for="bass-guitar">Bass Guitar</label>
+            <input type="checkbox" name="instruments" id="trumpet" value="trumpet">
+            <label for="trumpet">Trumpet</label>
+            <input type="checkbox" name="instruments" id="violin" value="violin">
+            <label for="violin">Violin</label>
+            <input type="checkbox" name="instruments" id="drums" value="drums">
+            <label for="drums">Drums</label>
+            <input type="checkbox" name="instruments" id="banjo" value="banjo">
+            <label for="banjo">Banjo</label>
+            <input type="checkbox" name="instruments" id="clarinet" value="clarinet">
+            <label for="clarinet">Clarinet</label>
+            <input type="checkbox" name="instruments" id="harp" value="harp">
+            <label for="harp">Harp</label>
+            <input type="checkbox" name="instruments" id="tuba" value="tuba">
+            <label for="tuba">Tuba</label>
+            <input type="checkbox" name="instruments" id="not" value="not">
+            <label for="not">Not Interested</label>
+        </div>
+        <!-- TODO: opcion de comentarios -->
+        <div class="live form-comments">
+            <p>Any comments or suggestions?</p>
+            <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+        </div>
+        <!-- TODO: Finalizamos con el Submit -->
+        <div class="live form-submit">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin-top: 10vmin;
+  text-align: center;
+}
+.container #title {
+  color: #0074d9;
+  text-shadow: 0px 0px 1px #000;
+  font-family: Arial;
+}
+.container #description {
+  margin: 1rem 10%;
+  font-family: monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#survey-form {
+  width: 90%;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+}
+#survey-form .live {
+  background: rgba(0, 116, 217, 0.5);
+  height: 50px;
+  border-radius: 5px;
+}
+@media (min-width: 470px) {
+  #survey-form {
+    width: 85%;
+  }
+}
+@media (min-width: 760px) {
+  #survey-form {
+    background: rgba(0, 116, 217, 0.5);
+    border-radius: 5px;
+    padding: 1rem 0;
+    gap: 0px;
+    max-width: 850px;
+  }
+  #survey-form .live {
+    background: none;
+    border-radius: 0px;
+  }
+}
+
+#survey-form .form-comments {
+  grid-area: 8/1/9/7;
+  height: auto;
+  text-align: center;
+}
+#survey-form .form-comments p {
+  margin: 10px;
+}
+#survey-form .form-comments #comments {
+  width: 90%;
+  height: 80px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  padding: 10px;
+  color: #0074d9;
+  outline: none;
+}
+#survey-form .form-comments #comments:hover {
+  border: 1px solid #0074d9;
+}
+@media (min-width: 470px) {
+  #survey-form .form-comments #comments {
+    width: 80%;
+  }
+}
+@media (min-width: 630px) {
+  #survey-form .form-comments #comments {
+    width: 70%;
+  }
+}
+@media (min-width: 760px) {
+  #survey-form .form-comments {
+    grid-area: 5/1/6/4;
+  }
+  #survey-form .form-comments #comments {
+    width: 70%;
+    height: 135px;
+  }
+}
+
+#survey-form .form-submit {
+  grid-area: 9/1/10/7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#survey-form .form-submit #submit {
+  padding: 5px 1rem;
+  border: 2px solid #0074d9;
+  background: #52b2b9;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #0074d9;
+  text-shadow: 0px 0px 2px #fff;
+  outline: none;
+  cursor: pointer;
+}
+#survey-form .form-submit #submit:hover {
+  border: 2px solid #000;
+  box-shadow: 0px 0px 2px #000;
+  text-shadow: none;
+  background: rgba(82, 178, 185, 0.733);
+}
+@media (min-width: 760px) {
+  #survey-form .form-submit {
+    grid-area: 6/1/7/7;
+  }
+}
+
+/*TODO: Aqui se modifican los input y labbel de Name, Email y Number(edad).*/
+#survey-form .form-name {
+  grid-area: 1/1/2/7;
+  height: 40px;
+}
+#survey-form .form-name .l1 {
+  width: 90%;
+}
+@media (min-width: 760px) {
+  #survey-form .form-name {
+    grid-area: 1/1/2/4;
+  }
+}
+
+#survey-form .form-email {
+  grid-area: 2/1/3/7;
+  height: 40px;
+}
+#survey-form .form-email .l2 {
+  width: 90%;
+}
+@media (min-width: 760px) {
+  #survey-form .form-email {
+    grid-area: 1/4/2/7;
+  }
+}
+
+#survey-form .form-number {
+  grid-area: 3/1/4/3;
+  height: 40px;
+}
+#survey-form .form-number .l3 {
+  width: 75%;
+}
+@media (min-width: 760px) {
+  #survey-form .form-number {
+    grid-area: 2/2/3/3;
+  }
+}
+
+.form-name .l1,
+.form-email .l2,
+.form-number .l3 {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  margin: 0 auto;
+}
+.form-name .l1 input,
+.form-email .l2 input,
+.form-number .l3 input {
+  color: #000;
+  width: 100%;
+  height: 100%;
+  padding: 13px 0 0 1rem;
+  border: none;
+  outline: none;
+  background: none;
+}
+.form-name .l1 input:focus + label .content, .form-name .l1 input:valid + label .content,
+.form-email .l2 input:focus + label .content,
+.form-email .l2 input:valid + label .content,
+.form-number .l3 input:focus + label .content,
+.form-number .l3 input:valid + label .content {
+  transform: translateY(-70%);
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px #0074d9;
+}
+.form-name .l1 input:focus + label::after, .form-name .l1 input:valid + label::after,
+.form-email .l2 input:focus + label::after,
+.form-email .l2 input:valid + label::after,
+.form-number .l3 input:focus + label::after,
+.form-number .l3 input:valid + label::after {
+  transform: translateX(0%);
+}
+.form-name .l1 label,
+.form-email .l2 label,
+.form-number .l3 label {
+  position: absolute;
+  bottom: 3px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #fff;
+}
+.form-name .l1 label .content,
+.form-email .l2 label .content,
+.form-number .l3 label .content {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+  color: #000;
+  text-shadow: 1px 1px 10px #fff;
+}
+.form-name .l1 label::after,
+.form-email .l2 label::after,
+.form-number .l3 label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #0074d9;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+/*Es para ocultar el escoll del input de numeros*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*TODO: Aqui se modifica los los div: .form-sexo, .form-radio y los .form-checkbox.*/
+#survey-form .form-sexo {
+  grid-area: 3/3/4/7;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#survey-form .form-sexo p {
+  display: none;
+}
+#survey-form .form-sexo label {
+  margin: 0 2px;
+}
+#survey-form .form-sexo label::before {
+  border-radius: 50%;
+}
+@media (min-width: 470px) {
+  #survey-form .form-sexo p {
+    display: block;
+    margin: 0 0.5rem;
+  }
+  #survey-form .form-sexo label {
+    margin: 0;
+  }
+}
+@media (min-width: 760px) {
+  #survey-form .form-sexo {
+    grid-area: 2/4/3/7;
+    align-items: flex-end;
+  }
+}
+
+#survey-form .form-radio {
+  grid-area: 5/1/6/7;
+  height: auto;
+  padding: 0px 5px 10px 5px;
+  text-align: center;
+}
+#survey-form .form-radio p {
+  margin: 10px;
+}
+#survey-form .form-radio label::before {
+  border-radius: 50%;
+}
+@media (min-width: 760px) {
+  #survey-form .form-radio {
+    grid-area: 3/4/4/7;
+  }
+  #survey-form .form-radio p {
+    margin-top: 20px;
+  }
+}
+
+#survey-form .form-checkbox {
+  grid-area: 7/1/8/7;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 0px 5px 10px 5px;
+  text-align: center;
+}
+#survey-form .form-checkbox p {
+  grid-area: 1/1/2/3;
+  margin: 10px 10px 6px 10px;
+}
+@media (min-width: 470px) {
+  #survey-form .form-checkbox label {
+    width: 9.5rem;
+    margin: auto;
+  }
+}
+@media (min-width: 630px) {
+  #survey-form .form-checkbox {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #survey-form .form-checkbox p {
+    grid-area: 1/1/2/4;
+  }
+}
+@media (min-width: 760px) {
+  #survey-form .form-checkbox {
+    grid-area: 4/4/6/7;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #survey-form .form-checkbox p {
+    grid-area: 1/1/2/3;
+  }
+}
+
+#survey-form input[type=radio],
+#survey-form input[type=checkbox] {
+  display: none;
+}
+#survey-form input[type=radio]:checked + label,
+#survey-form input[type=checkbox]:checked + label {
+  padding: 5px 16px;
+  background: #0074d9;
+  text-shadow: 1px 1px 10px #fff;
+  border-radius: 3px;
+  color: #fff;
+}
+#survey-form input[type=radio]:checked + label::before,
+#survey-form input[type=checkbox]:checked + label::before {
+  display: none;
+}
+
+#survey-form .form-sexo label,
+#survey-form .form-radio label,
+#survey-form .form-checkbox label {
+  color: #0074d9;
+  background: rgba(255, 255, 255, 0.637);
+  padding: 5px 6px 5px 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#survey-form .form-sexo label:hover,
+#survey-form .form-radio label:hover,
+#survey-form .form-checkbox label:hover {
+  background: rgba(0, 116, 217, 0.3);
+}
+#survey-form .form-sexo label::before,
+#survey-form .form-radio label::before,
+#survey-form .form-checkbox label::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border: 2px solid #0074d9;
+  position: absolute;
+  left: 6px;
+}
+
+#survey-form .form-role1 {
+  grid-area: 4/1/5/7;
+  height: auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#survey-form .form-role1 p {
+  margin: 10px;
+}
+@media (min-width: 760px) {
+  #survey-form .form-role1 {
+    grid-area: 3/1/4/4;
+  }
+  #survey-form .form-role1 p {
+    margin-top: 20px;
+  }
+}
+
+#survey-form .form-role2 {
+  grid-area: 6/1/7/7;
+  height: auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#survey-form .form-role2 p {
+  margin: 10px;
+}
+@media (min-width: 760px) {
+  #survey-form .form-role2 {
+    grid-area: 4/1/5/4;
+  }
+}
+
+#survey-form .live .control {
+  width: 90%;
+  border: none;
+  border-radius: 6px;
+  background: #0074d9be;
+  color: #fff;
+  height: 27px;
+  outline: none;
+}
